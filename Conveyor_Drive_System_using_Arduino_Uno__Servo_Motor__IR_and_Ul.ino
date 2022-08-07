@@ -7,7 +7,7 @@ Title: Conveyor Drive System Using Arduino Uno,
 
 Coded by: Ariel M. Rosales
 Created on: August 05,2022 
-Last edit on: August 06,2022
+Last edit on: August 07,2022
 ---------------------------------------------------------
 
  This circuit can explain the  simple operation of a conveyor drive 
@@ -16,34 +16,37 @@ Last edit on: August 06,2022
  
 Components Equivalent in Real Conveyor Drive:
 
-2 DC Motor = represents Conveyor Motor  
-2 LEDs =represents Single Acting Cylinder Spring Return
-2 Servo Motor= represents base of Robotic Manipulator (e.g.,SCARA RRP)
+2 DC Motor =      represents Conveyor Motor  
+2 LEDs =          represents Single Acting Cylinder Spring Return
+2 Servo Motor =   represents base of Robotic Manipulator (e.g.,SCARA RRP)
 
 
 INSTRUCTIONS & CONDITIONS:
 
 
 NOTE:
-kINDLY READ CAREFULLY AND THOROUGHLY TO AVOID MIS-INTERPRETATION THANKYOU!!!
+KINDLY READ CAREFULLY AND THOROUGHLY TO AVOID MIS-INTERPRETATION.
 
 
-1.Pressing button "|<<" in  IR remote will  make the left servo to move with 30 deg increments 
-    until it reaches 0 deg.(clockwise  direction)............min val=0deg
+1.Pressing button "|<<" in  IR remote will  make the LEFT SERVO to move with 30 deg increments 
+    until it reaches the assigned angle which is 0 deg.(clockwise  direction)
     
-2. Pressing button ">>|" in IR remote will make the right servo to move with  30 deg increments
-     until it reaches  180 deg.(counter clockwise direction)...max val=180deg
+2. Pressing button ">>|" in IR remote will make the RIGHT SERVO to move with  30 deg increments
+     until it reaches the assigned angle which is 180 deg.(counter clockwise direction)
  
-3. If instruction #1 happen, the red LED  will turn on for 5 seconds.
-4. If instruction #2 happen, the green  LED will turn on for 5 seconds.
+3. When instruction #1 happen, the red LED  will turn on for 5 seconds.
+4. When instruction #2 happen, the green  LED will turn on for 5 seconds.
 
-5. Instruction 3&4 emphasized that the Single Acting cylinder spring return had already been actuated.
+5. Instruction 3&4 symbolized that the Cylinder had already been actuated.
   
-6. For the left and right DC motor, it will run if the distance measured is greater than the assigned value.
+6. For the left and right DC motor, it will run when the distance measured by Ultrasonic sensor
+       is greater than 60(left) and 120(right).
+       
+ (note: For the instruction 3, 4 and 6 to occur, the assigned angle in instruction 1&2 must be reached.)   
      
 7. All the resulted output will be display in lcd screens.
 
- (note: instruction 3, 4 and 6 is not possible, if the assigned angle in instruction 1&2 is not reached.)   
+
 
 
 ------------------START OF PROGRAM--------------------------*/
