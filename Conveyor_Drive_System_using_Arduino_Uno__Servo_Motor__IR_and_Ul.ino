@@ -24,27 +24,38 @@ Components Equivalent in Real Conveyor Drive:
 INSTRUCTIONS & CONDITIONS:
 
 
-NOTE:
+NOTE: The Whole Process must Starts from left to right
+
 KINDLY READ CAREFULLY AND THOROUGHLY TO AVOID MIS-INTERPRETATION.
 
-
+----------------------------------------------------------------------------------------
 1.Pressing button "|<<" in  IR remote will  make the LEFT SERVO to move with 30 deg increments 
-    until it reaches the assigned angle which is 0 deg.(clockwise  direction)
+    until it reaches the assigned angle which is 0 deg.(clockwise  direction).
     
-2. Pressing button ">>|" in IR remote will make the RIGHT SERVO to move with  30 deg increments
-     until it reaches the assigned angle which is 180 deg.(counter clockwise direction)
- 
-3. When instruction #1 happen, the red LED  will turn on for 5 seconds.
-4. When instruction #2 happen, the green  LED will turn on for 5 seconds.
+2. When instruction #1 happen, the red LED  will turn on for 2 seconds.
 
-5. Instruction 3&4 symbolized that the Cylinder had already been actuated.
+3. After LEFT SERVO reaches its assigned angle, it will back to its initial position leaving the 
+  LEFT DC motor energized while RIGHT DC motor is off.  
   
-6. For the left and right DC motor, it will run when the distance measured by Ultrasonic sensor
-       is greater than 60(left) and 120(right).
-       
- (note: For the instruction 3, 4 and 6 to occur, the assigned angle in instruction 1&2 must be reached.)   
+-----------------------------------------------------------------------------------------   
+4. Pressing button ">>|" in IR remote will make the RIGHT SERVO to move with  30 deg increments
+     until it reaches the assigned angle which is 180 deg.(counter clockwise direction).
      
-7. All the resulted output will be display in lcd screens.
+5. When instruction #4 happen, the green  LED will turn on for 2 seconds.    
+
+6. After RIGHT SERVO reaches its assigned angle, it will back to its initial position leaving the 
+  RIGHT DC motor energized and turn off LEFT DC motor.
+  
+-------------------------------------------------------------------------------------------
+7. Instruction 2&5 symbolizes that the Cylinder had already been actuated.
+
+8. For the left and right DC motor, it will run when the distance measured by Ultrasonic sensor
+       is greater than 60(left) and 120(right), Thus, make sure that the measured value is above 120 or 
+       else both DC motor will not be energized.
+       
+ (note: For the instruction 2, 5 and 8 to occur, the assigned angle in instruction 1&4 must be reached.) 
+ 
+9. All the resulted output will be display in lcd screens.
 
 
 
@@ -173,7 +184,7 @@ void ServoAct(String value){
            digitalWrite(relayPin1,HIGH);
        } 
  
-      delay(5000);
+      delay(2000);
       myServo.write(90);
       digitalWrite(LED1,LOW);
       digitalWrite(relayPin2,LOW);
@@ -206,7 +217,7 @@ void ServoAct(String value){
        if(distance>=d2){
             digitalWrite(relayPin2,HIGH);
          }
-      delay(5000);
+      delay(2000);
       myServo2.write(90);
       digitalWrite(LED2,LOW);
       digitalWrite(relayPin1,LOW);
